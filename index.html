@@ -1,644 +1,1246 @@
 <!doctype html>
-<html class="h-100" lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
-  <meta name="author" content="Holger Koenemann">
-  <meta name="generator" content="Eleventy v2.0.0">
-  <meta name="HandheldFriendly" content="true">
-  <title>Klar HTML Template - Frontpage one</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Acompaño a negocios de gastronomía y hotelería a gestionar su presencia digital y crear contenido que refleje lo que los hace únicos.">
+  <meta name="theme-color" content="#e9e9c3">
+  <title>Yamila CK | Contenido & presencia digital</title>
   <link rel="stylesheet" href="css/theme.min.css">
-
   <style>
-    /* inter-300 - latin */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: local(''),
-        url('fonts/inter-v12-latin-300.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('fonts/inter-v12-latin-300.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    :root {
+      --cream: #e9e9c3;
+      --cream-light: #f3f0d7;
+      --olive: #293b1c;
+      --olive-soft: #445438;
+      --orange: #bf581f;
+      --orange-dark: #a94716;
+      --ink: #26321c;
+      --line: rgba(41, 59, 28, .32);
     }
 
-    /* inter-400 - latin */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: local(''),
-        url('fonts/inter-v12-latin-regular.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('fonts/inter-v12-latin-regular.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
     }
 
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: local(''),
-        url('fonts/inter-v12-latin-500.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('fonts/inter-v12-latin-500.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
     }
 
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
+    a {
+      color: inherit;
+    }
+
+    .site-hero {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      color: #fff1ca;
+      background-image: linear-gradient(90deg, rgba(47, 42, 31, .48) 0%, rgba(47, 42, 31, .23) 45%, rgba(47, 42, 31, .02) 100%), url("img/yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png");
+      background-position: center 47%;
+      background-size: cover;
+    }
+
+    .site-nav {
+      position: relative;
+      z-index: 2;
+      padding: 18px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      color: #fff1ca;
+      font-size: 1.28rem;
+      font-weight: 800;
+      letter-spacing: -.08em;
+      line-height: .8;
+      text-decoration: none;
+    }
+
+    .brand span:last-child {
+      padding-left: 9px;
+      font-size: .79rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 2.2vw, 31px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff1ca;
+      font-size: .82rem;
+      text-decoration: none;
+      transition: opacity .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      opacity: .72;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 11px 22px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--orange);
+      color: #fff5d8;
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .035em;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--orange-dark);
+      color: #fff5d8;
+    }
+
+    .nav-cta {
+      min-height: 34px;
+      padding: 9px 16px;
+      font-size: .65rem;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 530px;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 48px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--olive-soft);
+      font-size: .72rem;
       font-weight: 700;
-      font-display: swap;
-      src: local(''),
-        url('fonts/inter-v12-latin-700.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('fonts/inter-v12-latin-700.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow {
+      color: #fff1ca;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero-copy h1 {
+      max-width: 760px;
+      margin-bottom: 14px;
+      color: #fff1ca;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 4.2vw, 4rem);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: .98;
+      text-transform: uppercase;
+    }
+
+    .hero-copy p {
+      max-width: 475px;
+      margin-bottom: 25px;
+      color: #fff6df;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .section-pad {
+      padding: 84px 0;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--olive-soft);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 14px;
+      color: var(--olive);
+      font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+      font-weight: 750;
+      letter-spacing: -.025em;
+      line-height: 1.12;
+      text-align: center;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      font-size: .94rem;
+      text-align: center;
+    }
+
+    .proposal {
+      padding-top: 52px;
+      padding-bottom: 64px;
+    }
+
+    .proposal .row {
+      align-items: center;
+    }
+
+    .proposal-heading {
+      max-width: 450px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .proposal-heading .eyebrow {
+      margin-bottom: 17px;
+      text-align: center;
+    }
+
+    .proposal-heading h2 {
+      margin: 0;
+      color: var(--olive);
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      font-weight: 650;
+      letter-spacing: .015em;
+      line-height: 1.17;
+    }
+
+    .benefits {
+      max-width: 490px;
+      margin: auto;
+    }
+
+    .benefit {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .benefit:last-child {
+      border-bottom: 0;
+    }
+
+    .benefit h3 {
+      margin-bottom: 4px;
+      color: var(--olive);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .benefit p {
+      margin-bottom: 0;
+      font-size: .87rem;
+    }
+
+    .services {
+      padding-top: 45px;
+      padding-bottom: 90px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .service-card {
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      min-height: 100%;
+      border-radius: 23px;
+      background: var(--olive);
+      box-shadow: 0 8px 14px rgba(37, 45, 22, .18);
+      color: #f7f0d8;
+    }
+
+    .service-card:nth-child(2) {
+      background: var(--orange);
+    }
+
+    .service-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.45 / 1;
+      object-fit: cover;
+    }
+
+    .service-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px 24px 24px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      color: #fff6df;
+      font-size: 1.45rem;
+      font-weight: 750;
+      line-height: 1.1;
+    }
+
+    .service-card p,
+    .service-card li {
+      font-size: .84rem;
+      line-height: 1.45;
+    }
+
+    .service-card p {
+      margin-bottom: 11px;
+    }
+
+    .service-card ul {
+      margin: 0 0 16px;
+      padding-left: 18px;
+    }
+
+    .service-link {
+      margin-top: auto;
+      padding-top: 10px;
+      color: #fff6df;
+      font-size: .82rem;
+      font-weight: 650;
+      text-underline-offset: 4px;
+    }
+
+    .process {
+      padding-top: 26px;
+      padding-bottom: 48px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 6vw, 85px);
+      align-items: center;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .process-intro {
+      text-align: right;
+    }
+
+    .process-intro .eyebrow {
+      margin-bottom: 13px;
+    }
+
+    .process-intro h2 {
+      margin-bottom: 16px;
+      color: var(--olive);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.08;
+    }
+
+    .process-intro p {
+      max-width: 440px;
+      margin: 0 0 0 auto;
+      font-size: .91rem;
+    }
+
+    .process-steps {
+      display: grid;
+      gap: 20px;
+    }
+
+    .process-step {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-step:last-child {
+      padding-bottom: 0;
+      border: 0;
+    }
+
+    .process-step h3 {
+      margin-bottom: 4px;
+      color: var(--olive);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .process-step p {
+      margin-bottom: 0;
+      font-size: .86rem;
+    }
+
+    .gallery {
+      padding-top: 8px;
+      padding-bottom: 80px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 27px;
+    }
+
+    .gallery-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.48 / 1;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 22px;
+      margin: -13px 0 25px;
+      color: var(--olive);
+      font-size: .79rem;
+      font-weight: 650;
+    }
+
+    .about-section {
+      padding: 0 0 42px;
+    }
+
+    .about-frame {
+      padding: clamp(20px, 4vw, 42px);
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(37, 48, 25, .16), rgba(37, 48, 25, .16)),
+        url("img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (3).png") center / cover;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(22px, 5vw, 60px);
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: clamp(24px, 4vw, 48px);
+      border-radius: 20px;
+      background: var(--cream);
+    }
+
+    .about-photo {
+      display: block;
+      width: 100%;
+      max-height: 365px;
+      border-radius: 13px;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .about-note {
+      margin: 18px 0 0;
+      font-size: .88rem;
+    }
+
+    .about-copy {
+      align-self: center;
+    }
+
+    .about-copy h2 {
+      margin-bottom: 16px;
+      color: var(--olive);
+      font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+      font-weight: 550;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .about-copy p {
+      margin-bottom: 15px;
+      font-size: .91rem;
+    }
+
+    .testimonials {
+      padding-top: 56px;
+      padding-bottom: 85px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 330px;
+      padding: 26px 24px 20px;
+      border: 1px solid rgba(47, 57, 34, .1);
+      border-radius: 15px;
+      background: rgba(247, 244, 218, .68);
+      box-shadow: 0 6px 13px rgba(37, 45, 22, .14);
+    }
+
+    .stars {
+      margin-bottom: 12px;
+      color: #59614c;
+      font-size: 1.06rem;
+      letter-spacing: .08em;
+    }
+
+    .testimonial-card blockquote {
+      flex: 1;
+      margin: 0 0 18px;
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .client img {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+    }
+
+    .client strong,
+    .client span {
+      display: block;
+    }
+
+    .client strong {
+      color: var(--olive);
+      font-size: .82rem;
+    }
+
+    .client span {
+      font-size: .74rem;
+    }
+
+    .final-cta {
+      padding: 5px 0 42px;
+    }
+
+    .cta-box {
+      max-width: 650px;
+      margin: auto;
+      padding: clamp(30px, 5vw, 52px);
+      border-radius: 24px;
+      background: var(--orange);
+      box-shadow: 0 10px 18px rgba(67, 55, 28, .22);
+      color: #fff1ca;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin-bottom: 8px;
+      font-size: clamp(1.75rem, 3.5vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: .015em;
+      line-height: 1.12;
+    }
+
+    .cta-box p {
+      margin-bottom: 18px;
+      font-size: .9rem;
+    }
+
+    .button-light {
+      background: #fff1ca;
+      color: var(--orange-dark);
+    }
+
+    .button-light:hover,
+    .button-light:focus-visible {
+      background: #fff8e6;
+      color: var(--orange-dark);
+    }
+
+    .site-footer {
+      padding: 38px 0 18px;
+      background: var(--orange);
+      color: #fff1ca;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 26px;
+    }
+
+    .footer-brand p {
+      max-width: 310px;
+      margin: 14px 0 0;
+      font-size: .79rem;
+    }
+
+    .footer-heading {
+      display: block;
+      margin-bottom: 8px;
+      font-size: .83rem;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 5px;
+    }
+
+    .footer-links a {
+      color: #fff1ca;
+      font-size: .78rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copyright {
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 241, 202, .32);
+      font-size: .72rem;
+      text-align: center;
+    }
+
+    @media (max-width: 767.98px) {
+      .site-hero {
+        min-height: 480px;
+        background-position: 58% center;
+      }
+
+      .site-nav {
+        padding: 13px 0 5px;
+      }
+
+      .nav-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 14px;
+      }
+
+      .brand {
+        margin-right: auto;
+        font-size: 1.05rem;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .nav-links a {
+        font-size: .69rem;
+      }
+
+      .nav-cta {
+        min-height: 30px;
+        padding: 7px 10px;
+        font-size: .56rem;
+      }
+
+      .hero-content {
+        min-height: 400px;
+        align-items: flex-end;
+        padding-top: 35px;
+        padding-bottom: 30px;
+      }
+
+      .hero-copy {
+        max-width: 390px;
+      }
+
+      .hero-copy h1 {
+        max-width: 420px;
+        font-size: clamp(2rem, 8.3vw, 3.4rem);
+      }
+
+      .hero-copy p {
+        max-width: 335px;
+        font-size: .87rem;
+      }
+
+      .section-pad {
+        padding: 55px 0;
+      }
+
+      .proposal {
+        padding-top: 32px;
+        padding-bottom: 42px;
+      }
+
+      .proposal-heading {
+        margin-bottom: 24px;
+      }
+
+      .proposal-heading h2 {
+        max-width: 360px;
+        margin: auto;
+        font-size: 1.75rem;
+      }
+
+      .benefit {
+        padding: 10px 0;
+      }
+
+      .benefit h3 {
+        font-size: .9rem;
+      }
+
+      .benefit p {
+        font-size: .81rem;
+      }
+
+      .services {
+        padding-top: 25px;
+        padding-bottom: 58px;
+      }
+
+      .section-intro {
+        margin-bottom: 24px;
+        font-size: .82rem;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 460px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        border-radius: 19px;
+      }
+
+      .service-card img {
+        aspect-ratio: 2.1 / 1;
+      }
+
+      .service-card-body {
+        padding: 17px 19px 20px;
+      }
+
+      .service-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .service-card p,
+      .service-card li {
+        font-size: .77rem;
+      }
+
+      .process {
+        padding-top: 5px;
+        padding-bottom: 38px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+      }
+
+      .process-intro {
+        max-width: 430px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .process-intro h2 {
+        max-width: 340px;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 1.85rem;
+      }
+
+      .process-intro p {
+        margin: auto;
+        font-size: .82rem;
+      }
+
+      .process-steps {
+        max-width: 430px;
+        margin: auto;
+        gap: 13px;
+      }
+
+      .process-step h3 {
+        font-size: .9rem;
+      }
+
+      .process-step p {
+        font-size: .8rem;
+      }
+
+      .gallery {
+        padding-top: 0;
+        padding-bottom: 46px;
+      }
+
+      .gallery-grid {
+        gap: 9px;
+        margin-top: 20px;
+      }
+
+      .gallery-grid img {
+        aspect-ratio: 1.25 / 1;
+        border-radius: 10px;
+      }
+
+      .project-tags {
+        gap: 6px 12px;
+        margin-top: -7px;
+        font-size: .69rem;
+      }
+
+      .about-section {
+        padding-bottom: 28px;
+      }
+
+      .about-frame {
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .about-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .about-photo {
+        max-height: 270px;
+        aspect-ratio: 1.15 / 1;
+      }
+
+      .about-note,
+      .about-copy p {
+        font-size: .8rem;
+      }
+
+      .about-copy h2 {
+        font-size: 1.55rem;
+      }
+
+      .testimonials {
+        padding-top: 42px;
+        padding-bottom: 50px;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        max-width: 480px;
+        margin: 24px auto 0;
+      }
+
+      .testimonial-card {
+        min-height: auto;
+        padding: 20px 19px 16px;
+      }
+
+      .testimonial-card blockquote {
+        font-size: .8rem;
+      }
+
+      .final-cta {
+        padding-bottom: 30px;
+      }
+
+      .cta-box {
+        padding: 28px 20px;
+        border-radius: 18px;
+      }
+
+      .cta-box p {
+        font-size: .8rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px 14px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-brand p {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-inner {
+        gap: 9px 8px;
+      }
+
+      .nav-links {
+        gap: 5px;
+      }
+
+      .nav-links a {
+        font-size: .62rem;
+      }
+
+      .nav-cta {
+        font-size: .5rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 768px) {
+      .about-photo {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
     }
   </style>
-
-
 </head>
 
-<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+<body>
+  <header class="site-hero" id="inicio">
+    <nav class="site-nav" aria-label="Navegación principal">
+      <div class="container nav-inner">
+        <a class="brand" href="#inicio" aria-label="Yamila CK, inicio">
+          <span>yamila</span>
+          <span>ck</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#trabajamos">Mi trabajo</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+        </ul>
+        <a class="button nav-cta" href="#contacto">Agendá consulta</a>
+      </div>
+    </nav>
 
-  <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-    <div class="container">
-      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
-          viewBox="0 0 16 16">
-          <path
-            d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
-          <path
-            d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
-        </svg>
-        <span class="ms-md-1 mt-1 fw-bolder me-md-5">Klar</span>
-      </a>
-
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
-            Inicio
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="content.html" aria-label="A sample content page">
-            Servicios
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
-            Mi trabajo
-          </a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
-            Sobre mi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
-           Testimonios
-          </a>
-        </li>
-
-      </ul>
-      <a href="https://templatedeck.com/klar-html-template.html" aria-label="Download this template"
-        class="btn btn-outline-light">
-        <small>Agendar consulta</small>
-      </a>
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <span class="eyebrow hero-eyebrow">Contenido &amp; presencia digital</span>
+        <h1>Vos te ocupás de tu negocio, yo de su presencia digital.</h1>
+        <p>Acompaño a negocios de gastronomía y hotelería a gestionar su presencia digital y crear contenido que refleje lo que los hace únicos.</p>
+        <a class="button" href="#contacto">Hablemos de tu negocio</a>
+      </div>
     </div>
-  </nav>
+  </header>
 
   <main>
-    <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
-      <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
-      <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
-        <div class="row d-flex align-items-center justify-content-center py-vh-5">
-          <div class="col-12 col-xl-10">
-            <span class="h5 text-secondary fw-lighter">Our Mission</span>
-            <h1 class="display-huge mt-3 mb-3 lh-1">We do ordinary stuff for cool people</h1>
-          </div>
-          <div class="col-12 col-xl-8">
-            <p class="lead text-secondary">We are some sort of DAO working with AI, NFT´s, web 4.0 and the so called
-              blockchain...in the Metaverse. You don´t understand a word? No problem, we neither!</p>
-          </div>
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-xl btn-light">Join us
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
-      <div class="container-fluid px-vw-5">
-        <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
-        <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
-          <div class="col-12 col-lg-6">
-            <img src="img/webp/abstract18.webp" width="2280" height="1732" alt="abstract image"
-              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-            <img src="img/webp/abstract6.webp" width="1116" height="1578" alt="abstract image"
-              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-            <img src="img/webp/abstract9.webp" width="1116" height="848" alt="abstract image"
-              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-dark">
-      <div class="container px-vw-5 py-vh-5">
-        <div class="row d-flex align-items-center">
-          <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
-            <span class="h5 text-secondary fw-lighter">What we do</span>
-            <h2 class="display-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
-          </div>
-          <div class="col-12 col-lg-5" data-aos="fade-left">
-            <h3 class="pt-5">Product Design & Strategy</h3>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-              </svg>
-            </p>
-            <h3 class="border-top border-secondary pt-5 mt-5">Development & Engineering</h3>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-              </svg>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-black py-vh-3">
-      <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-
-        <div class="row gx-5">
+    <section class="proposal section-pad" aria-labelledby="proposal-title">
+      <div class="container">
+        <div class="row g-4">
           <div class="col-12 col-md-6">
-            <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract3.webp" width="582" height="327" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract2.webp" width="582" height="442" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
+            <div class="proposal-heading">
+              <span class="eyebrow">Tu negocio en el mundo digital</span>
+              <h2 id="proposal-title">Estar presente online no debería ser una tarea pendiente</h2>
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <div class="p-5 pt-0 mt-5" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">What we don´t know</span>
-              <h2 class="display-4">There is a lot we don´t know. Here is a small sneak peek</h2>
-            </div>
-            <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract17.webp" width="582" height="390" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract4.webp" width="582" height="327" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-    <div class="bg-dark position-relative">
-      <div class="container px-vw-5 py-vh-5">
-        <div class="row d-flex align-items-center">
-
-          <div class="col-12 col-lg-7">
-            <img class="img-fluid rounded-5 mb-n5 shadow" src="img/webp/person9.webp" width="512" height="512"
-              alt="a nice person" loading="lazy" data-aos="zoom-in-right">
-            <img class="img-fluid rounded-5 ms-5 mb-n5 shadow" src="img/webp/person11.webp" width="512" height="512"
-              alt="another nice person" loading="lazy" data-aos="zoom-in-up">
-          </div>
-          <div class="col-12 col-lg-5 bg-dark rounded-5 py-5" data-aos="fade">
-            <span class="h5 text-secondary fw-lighter">Do you like faces?</span>
-            <h2 class="display-4">We constantly adding new images to our website. Does it make sense? No!</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-black">
-      <div class="container px-vw-5 py-vh-5">
-        <div class="row d-flex align-items-center">
-          <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right">
-            <span class="h5 text-secondary fw-lighter">What we charge</span>
-            <h2 class="display-4">You get all our knowledge for one simple price</h2>
-          </div>
-          <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up">
-            <h2 class="display-huge mb-5">
-              <span class="fs-4 me-2 fw-light">$</span><span class="border-bottom border-5">499</span><span
-                class="fs-6 fw-light">/day</span>
-            </h2>
-            <p class="lead text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="#" class="btn btn-xl btn-light">Sign up
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
-      <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
-      <div class="position-relative py-vh-5 bg-cover bg-center rounded-5"
-        style="background-image: url(img/webp/abstract12.webp)">
-        <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-          <div class="row d-flex align-items-center">
-
-            <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
-              <div class="row d-flex justify-content-center">
-                <div class="col-12">
-                  <img src="img/webp/person103.webp" width="684" height="457" alt="our CEO with some nice numbers"
-                    class="img-fluid rounded-5" loading="lazy">
-                </div>
-                <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-                  <p class="lead border-bottom pb-4 border-secondary">"Lorem ipsum dolor sit amet, consetetur sadipscing
-                    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                    takimata sanctus est Lorem ipsum dolor sit amet."</p>
-                  <p class="text-secondary text-center">Jane Doe, CEO</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-5 offset-1">
-              <span class="h5 text-secondary fw-lighter">The numbers</span>
-              <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">+400</h2>
-              <p class="h4 fw-lighter text-secondary">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-              </p>
-
-              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">78.981
-              </h2>
-              <p class="h4 fw-lighter text-secondary">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-              </p>
-              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">98%</h2>
-              <p class="h4 fw-lighter text-secondary">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="bg-dark py-vh-5">
-      <div class="container px-vw-5">
-        <div class="row d-flex gx-5 align-items-center">
-          <div class="col-12 col-lg-6">
-            <div class="rounded-5 bg-black p-5 shadow" data-aos="zoom-in-right">
-              <div class="fs-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-              </div>
-              <p class="text-secondary lead">"Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et
-                dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-              <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
-                <img src="img/webp/person14.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
-                  data-aos="fade" loading="lazy">
-                <div>
-                  <span class="h6 fw-5">Jane Doemunsky</span><br>
-                  <small class="text-secondary">COO, The Boo Corp.</small>
-                </div>
-              </div>
-            </div>
-            <div class="rounded-5 bg-black p-5 shadow mt-5" data-aos="zoom-in-right">
-              <div class="fs-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-half" viewBox="0 0 16 16">
-                  <path
-                    d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z" />
-                </svg>
-
-              </div>
-              <p class="text-secondary lead">"Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam. quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat."</p>
-              <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
-                <img src="img/webp/person13.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
-                  data-aos="fade" loading="lazy">
-                <div>
-                  <span class="h6 fw-5">Jane Doemunsky</span><br>
-                  <small class="text-secondary">COO, The Boo Corp.</small>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="p-5 pt-0" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">What others have to say</span>
-              <h2 class="display-4">Invidunt ut labore et dolore magna aliquyam erat.</h2>
-            </div>
-            <div class="rounded-5 bg-black p-5 shadow mt-5 gradient" data-aos="zoom-in-left">
-              <div class="fs-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-
-
-              </div>
-              <p class="lead">"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat."</p>
-              <div class="d-flex justify-content-start align-items-center border-top pt-3">
-                <img src="img/webp/person16.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
-                  data-aos="fade" loading="lazy">
-                <div>
-                  <span class="h6 fw-5">Jane Doemunsky</span><br>
-                  <small>COO, The Boo Corp.</small>
-                </div>
-              </div>
+            <div class="benefits">
+              <article class="benefit">
+                <h3>Más organización</h3>
+                <p>Una comunicación planificada y constante.</p>
+              </article>
+              <article class="benefit">
+                <h3>Contenido propio</h3>
+                <p>Imágenes y videos que muestran tu esencia.</p>
+              </article>
+              <article class="benefit">
+                <h3>Presencia coherente</h3>
+                <p>Información alineada en tus canales digitales.</p>
+              </article>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
+    <section class="services section-pad" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        <span class="section-label">Servicios</span>
+        <h2 class="section-title" id="services-title">Distintas formas de acompañar tu negocio</h2>
+        <p class="section-intro">Cada negocio tiene necesidades diferentes. Podemos trabajar en tu presencia digital, crear contenido audiovisual o ayudarte a gestionar tus propias redes con mayor autonomía.</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (3).png"
+              alt="Espacio gastronómico con mesas preparadas y vegetación">
+            <div class="service-card-body">
+              <h3>Encuentros 1:1</h3>
+              <p>Aprendé a organizar tus ideas, planificar publicaciones y crear contenido con una mirada estratégica para gestionar tus propias redes.</p>
+              <ul>
+                <li>Dos encuentros al mes.</li>
+                <li>Planificación e ideas de contenido.</li>
+                <li>Organización de un calendario.</li>
+                <li>Canva y CapCut básico aplicado a tu negocio.</li>
+                <li>Revisión de avances y resolución de dudas.</li>
+              </ul>
+              <a class="service-link" href="#contacto">Consultá por este servicio ↗</a>
+            </div>
+          </article>
 
+          <article class="service-card">
+            <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png"
+              alt="Contenido visual para una marca de pastelería">
+            <div class="service-card-body">
+              <h3>Presencia digital</h3>
+              <p>Una mirada integral para ordenar y potenciar el contenido en tus canales digitales.</p>
+              <ul>
+                <li>Análisis de necesidades y objetivos.</li>
+                <li>Gestión de Instagram y planificación de contenido.</li>
+                <li>Creación, optimización y mantenimiento de perfiles digitales.</li>
+                <li>Comunicación visual y comunicación en canales.</li>
+              </ul>
+              <a class="service-link" href="#contacto">Consultá por este servicio ↗</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (2).png"
+              alt="Café y croissant en una mesa de cafetería">
+            <div class="service-card-body">
+              <h3>Creación de contenido</h3>
+              <p>Mostrá tus productos, espacios y experiencias con contenido propio, pensado para comunicar lo que hace especial a tu marca.</p>
+              <ul>
+                <li>Planificación previa de jornada.</li>
+                <li>Producción fotográfica y audiovisual.</li>
+                <li>Edición para redes sociales.</li>
+                <li>Entre 4 y 6 reels editados.</li>
+              </ul>
+              <a class="service-link" href="#contacto">Consultá por este servicio ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section-pad" id="trabajamos" aria-labelledby="process-title">
+      <div class="container process-grid">
+        <div class="process-intro">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2 id="process-title">Un proceso cercano, pensado para tu negocio</h2>
+          <p>No se trata de hacer por hacer. Primero entendemos qué necesitás y después definimos cómo podemos trabajar para conseguirlo.</p>
+        </div>
+        <div class="process-steps">
+          <article class="process-step">
+            <h3>1. Hablamos</h3>
+            <p>Me contás sobre tu negocio, tus objetivos y aquello que hoy necesitás resolver.</p>
+          </article>
+          <article class="process-step">
+            <h3>2. Planificamos</h3>
+            <p>Definimos una propuesta de trabajo acorde a tus necesidades y prioridades.</p>
+          </article>
+          <article class="process-step">
+            <h3>3. Lo hacemos realidad</h3>
+            <p>Ponemos en marcha el trabajo y mantenemos una comunicación cercana durante el proceso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 class="section-title" id="gallery-title">Ideas que toman forma y marcas que cuentan historias</h2>
+        <p class="section-intro">Cada proyecto es una oportunidad para descubrir qué hace especial a cada negocio y transformarlo en contenido visual que conecte.</p>
+        <div class="project-tags" aria-label="Tipos de proyectos">
+          <span>Encuentros 1:1</span>
+          <span>Creación de contenido</span>
+          <span>Presencia digital</span>
+        </div>
+        <div class="gallery-grid">
+          <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (2).png"
+            alt="Café y croissant en una cafetería" loading="lazy">
+          <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png"
+            alt="Una creación de pastelería fotografiada para redes" loading="lazy">
+          <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (3).png"
+            alt="Salón de restaurante preparado para recibir a sus clientes" loading="lazy">
+          <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (3).png"
+            alt="Detalles de un espacio gastronómico" loading="lazy">
+          <img src="img/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/servicios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (2).png"
+            alt="Café servido en una mesa" loading="lazy">
+          <img src="img/yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png"
+            alt="Yamila creando contenido para un negocio" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container about-frame">
+        <div class="about-card">
+          <div>
+            <img class="about-photo"
+              src="img/sobre_mi_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png"
+              alt="Yamila trabajando en su computadora" loading="lazy">
+            <p class="about-note">Me resulta apasionante la idea de vivir en movimiento, conocer nuevos lugares y descubrir otras formas de hacer las cosas. Y quiero que esa manera de ver el mundo también forme parte de mi trabajo: con curiosidad, flexibilidad y ganas de seguir creando.</p>
+          </div>
+          <div class="about-copy">
+            <h2 id="about-title">Involucrarme, entender y crear con sentido</h2>
+            <p>Creo que detrás de cada negocio hay una historia que merece ser contada. Por eso, antes de pensar en publicaciones o imágenes, me interesa conocer a las personas, entender sus objetivos y descubrir qué hace especial a cada marca.</p>
+            <p>Trabajo la cercanía, responsabilidad y el compromiso con cada proyecto, buscando que la comunicación digital refleje lo que el negocio es de verdad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section-pad" id="testimonios" aria-labelledby="testimonials-title">
+      <div class="container">
+        <span class="section-label">Experiencias reales</span>
+        <h2 class="section-title" id="testimonials-title">Cada proyecto es una historia compartida</h2>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>Me siento muy contenida y acompañada en cada proyecto. Yamila sabe escuchar, entender lo que me gusta y transmitirme exactamente lo que quiero expresar. Estoy feliz de poder trabajar conectadas y contar con su apoyo. ¡Todo quedó hermoso, tal como lo imaginaba! Una genia, sin dudas.</blockquote>
+            <div class="client">
+              <img src="img/logos_testimonios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/logos_testimonios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (3).png"
+                alt="" loading="lazy">
+              <div><strong>Chacra Los Limones</strong><span>María</span></div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>Excelente experiencia trabajando con ella. Destacamos su compromiso, creatividad y dedicación en la gestión de nuestras redes sociales. Siempre está atenta a los detalles, aporta ideas y busca la mejor manera de transmitir la esencia de nuestra marca. ¡La recomendamos totalmente por su profesionalismo y calidad humana!</blockquote>
+            <div class="client">
+              <img src="img/logos_testimonios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/logos_testimonios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png"
+                alt="" loading="lazy">
+              <div><strong>Dulces Fermín</strong><span>Malena</span></div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>¡No tengo palabras! ¡Espectacular lo que publicaste! Amé cómo quedó, los momentos que lograste captar y la gente mirando el atardecer. ¡Impresionante! ❤️</blockquote>
+            <div class="client">
+              <img src="img/logos_testimonios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay/logos_testimonios_yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay (2).png"
+                alt="" loading="lazy">
+              <div><strong>Chacra Los Cardos</strong><span>Eugenia</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contacto" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box">
+          <h2 id="cta-title">Tu próximo paso puede empezar con una charla</h2>
+          <p>Contame sobre tu negocio, qué necesitás mejorar y qué tenés en mente. Encontramos la mejor forma de trabajar juntos.</p>
+          <a class="button button-light" href="https://wa.me/?text=Hola%2C%20Yamila.%20Quiero%20conversar%20sobre%20mi%20negocio."
+            target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="bg-black border-top border-dark">
-    <div class="container py-vh-4 text-secondary fw-lighter">
-      <div class="row">
-        <div class="col-12 col-lg-5 py-4 text-center text-lg-start">
-          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
-              viewBox="0 0 16 16">
-              <path
-                d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
-              <path
-                d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
-            </svg>
-            <span class="ms-md-1 mt-1 fw-bolder me-md-5">Klar</span>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#inicio" aria-label="Yamila CK, volver al inicio">
+            <span>yamila</span>
+            <span>ck</span>
           </a>
-
+          <p>Presencia digital, gestión de redes sociales y creación de contenido audiovisual para marcas de gastronomía y hotelería. Estrategia, fotografía y comunicación digital para negocios que buscan conectar con sus clientes y fortalecer su presencia online en Uruguay.</p>
         </div>
-        <div class="col border-end border-dark">
-          <span class="h6">Company</span>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
-            </li>
-          </ul>
+        <div>
+          <span class="footer-heading">Menú</span>
+          <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#trabajamos">Cómo trabajamos</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#testimonios">Testimonios</a>
+          </div>
         </div>
-        <div class="col border-end border-dark">
-          <span class="h6">Services</span>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Products</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Customers</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Success Stories</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">More</a>
-            </li>
-          </ul>
+        <div>
+          <span class="footer-heading">Servicios</span>
+          <div class="footer-links">
+            <a href="#servicios">Encuentros 1:1</a>
+            <a href="#servicios">Creación de contenido</a>
+            <a href="#servicios">Presencia digital</a>
+          </div>
         </div>
-        <div class="col">
-          <span class="h6">Support</span>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
-            </li>
-          </ul>
+        <div>
+          <span class="footer-heading">Contactos</span>
+          <div class="footer-links">
+            <a href="https://wa.me/?text=Hola%2C%20Yamila.%20Quiero%20conversar%20sobre%20mi%20negocio."
+              target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container text-center small py-vh-2 border-top border-dark">Made by
-      <a href="https://templatedeck.com" class="link-fancy link-fancy-light" target="_blank">templatedeck.com</a>
-      Distributed by <a href="https://themewagon.com" class="link-fancy link-fancy-light" target="_blank">ThemeWagon</a>
+      <div class="copyright">© 2026 Yamila CK. Todos los derechos reservados. Diseñado por mD|nine</div>
     </div>
   </footer>
-
-
-
-
-
-
-
-
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800, // values from 0 to 3000, with step 50ms
-    });
-  </script>
-  <script>
-    let scrollpos = window.scrollY;
-    const header = document.querySelector(".navbar");
-    const header_height = header.offsetHeight;
-
-    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
-    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
-
-    window.addEventListener('scroll', function () {
-      scrollpos = window.scrollY;
-
-      if (scrollpos >= header_height) { add_class_on_scroll(); }
-      else { remove_class_on_scroll(); }
-
-      console.log(scrollpos);
-    })
-  </script>
-
 </body>
 
 </html>
