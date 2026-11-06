@@ -8,6 +8,7 @@
       --orange-dark: #a94716;
       --ink: #26321c;
       --line: rgba(41, 59, 28, .32);
+      --font-main: "Josefin Sans", sans-serif;
     }
 
     html {
@@ -19,7 +20,7 @@
       margin: 0;
       background: var(--cream);
       color: var(--ink);
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-family: var(--font-main);
       font-size: 15px;
       line-height: 1.55;
     }
@@ -32,7 +33,7 @@
       position: relative;
       min-height: 620px;
       overflow: hidden;
-      color: #fff1ca;
+      color: #ffeda8;
       background-image: linear-gradient(90deg, rgba(47, 42, 31, .48) 0%, rgba(47, 42, 31, .23) 45%, rgba(47, 42, 31, .02) 100%), url("../img/yamila_ck_presencia_digital_para_negocios_gastronomia_hoteleria_uruguay.png");
       background-position: center 47%;
       background-size: cover;
@@ -55,7 +56,7 @@
       display: inline-flex;
       flex: 0 0 auto;
       flex-direction: column;
-      color: #fff1ca;
+      color: #ffeda8;
       font-size: 1.28rem;
       font-weight: 800;
       letter-spacing: -.08em;
@@ -79,7 +80,7 @@
     }
 
     .nav-links a {
-      color: #fff1ca;
+      color: #ffeda8;
       font-size: .82rem;
       text-decoration: none;
       transition: opacity .2s ease;
@@ -149,7 +150,7 @@
     }
 
     .hero-eyebrow {
-      color: #fff1ca;
+      color: #ffeda8;
     }
 
     h1,
@@ -162,7 +163,7 @@
     .hero-copy h1 {
       max-width: 760px;
       margin-bottom: 14px;
-      color: #fff1ca;
+      color: #ffeda8;
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(2.6rem, 4.2vw, 4rem);
       font-weight: 400;
@@ -174,7 +175,7 @@
     .hero-copy p {
       max-width: 475px;
       margin-bottom: 25px;
-      color: #fff6df;
+      color: #ffeda8;
       font-size: 1rem;
       font-weight: 500;
     }
@@ -289,6 +290,16 @@
   background: var(--olive);
   box-shadow: 0 8px 14px rgba(37, 45, 22, .18);
   color: #f7f0d8;
+  /* Transición suave para el movimiento y la sombra */
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 24px rgba(37, 45, 22, .28);
 }
 
 .service-card:nth-child(2) {
@@ -300,6 +311,13 @@
   width: 100%;
   aspect-ratio: 1.2 / 1;  /* un poco más alta que ancha, queda más angosta visualmente */
   object-fit: cover;
+  /* Transición para el zoom suave de la imagen */
+  transition: transform 0.4s ease;
+}
+
+/* Micro-zoom en la imagen al hacer hover en la card */
+.service-card:hover img {
+  transform: scale(1.05);
 }
 
 .service-card-body {
@@ -333,12 +351,20 @@
 }
 
 .service-link {
+  display: inline-block;
   margin-top: auto;
   padding-top: 10px;
   color: #fff6df;
   font-size: .82rem;
   font-weight: 650;
   text-underline-offset: 4px;
+  /* Transición para mover el enlace sutilmente a la derecha */
+  transition: transform 0.3s ease;
+}
+
+/* Desplazamiento sutil del enlace al pasar el cursor */
+.service-card:hover .service-link {
+  transform: translateX(4px);
 }
 
 /* Responsive: en pantallas chicas se apilan y no se estiran de más */
@@ -582,7 +608,7 @@
       border-radius: 24px;
       background: var(--orange);
       box-shadow: 0 10px 18px rgba(67, 55, 28, .22);
-      color: #fff1ca;
+      color: #ffeda8;
       text-align: center;
     }
 
@@ -600,7 +626,7 @@
     }
 
     .button-light {
-      background: #fff1ca;
+      background: #ffeda8;
       color: var(--orange-dark);
     }
 
@@ -613,7 +639,7 @@
     .site-footer {
       padding: 38px 0 18px;
       background: var(--orange);
-      color: #fff1ca;
+      color: #ffeda8;
     }
 
     .footer-grid {
@@ -642,7 +668,7 @@
     }
 
     .footer-links a {
-      color: #fff1ca;
+      color: #ffeda8;
       font-size: .78rem;
       text-decoration: none;
     }
