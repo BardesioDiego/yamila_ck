@@ -102,32 +102,37 @@
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 11px 22px;
-      border: 0;
-      border-radius: 999px;
-      background: var(--orange);
-      color: #fff5d8;
-      font-size: .76rem;
-      font-weight: 750;
-      letter-spacing: .035em;
-      line-height: 1.2;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background .2s ease, transform .2s ease;
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espacio limpio entre el icono y el texto */
+  min-height: 42px;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff5d8;
+  font-size: .76rem;
+  font-weight: 750;
+  letter-spacing: .035em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .2s ease;
+}
 
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      background: var(--orange-dark);
-      color: #fff5d8;
-    }
+.button i {
+  font-size: 1rem; /* Hace que el logo destaque ligeramente sobre el texto */
+  line-height: 1;  /* Evita que el icono desplace la altura vertical del botón */
+}
 
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  background: var(--orange-dark);
+  color: #fff5d8;
+}
     .nav-cta {
       min-height: 34px;
       padding: 9px 16px;
@@ -370,20 +375,75 @@
 }
 
 .service-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
   margin-top: auto;
-  padding-top: 10px;
-  color: #fff6df;
-  font-size: .82rem;
-  font-weight: 650;
-  text-underline-offset: 4px;
-  /* Transición para mover el enlace sutilmente a la derecha */
-  transition: transform 0.3s ease;
+  margin-inline: auto;
+  align-self: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff5d8;
+  font-size: .76rem;
+  font-weight: 750;
+  letter-spacing: .035em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .2s ease;
 }
 
-/* Desplazamiento sutil del enlace al pasar el cursor */
-.service-card:hover .service-link {
-  transform: translateX(4px);
+.service-link i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Ahora el botón solo reacciona cuando pasas el cursor directamente sobre él */
+.service-link:hover,
+.service-link:focus-visible {
+  transform: translateY(-2px);
+  background: var(--orange-dark);
+  color: #fff5d8;
+}
+
+.service-link-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: auto;
+  margin-inline: auto;
+  align-self: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #31401a;
+  color: #fff5d8;
+  font-size: .76rem;
+  font-weight: 750;
+  letter-spacing: .035em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.service-link-green i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Ahora el botón solo reacciona cuando pasas el cursor directamente sobre él */
+.service-link-green:hover,
+.service-link-green:focus-visible {
+  transform: translateY(-2px);
+  background: #243013;
+  color: #fff5d8;
 }
 
 /* Responsive: en pantallas chicas se apilan y no se estiran de más */
@@ -468,24 +528,62 @@
     }
 
     .gallery {
-      padding-top: 8px;
-      padding-bottom: 56px;
-    }
+  padding-top: 16px;
+  padding-bottom: 72px;
+}
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 27px;
-    }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
 
-    .gallery-grid img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1.48 / 1;
-      border-radius: 16px;
-      object-fit: cover;
-    }
+/* Contenedor del enlace que envuelve la imagen */
+.gallery-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(37, 48, 25, 0.06);
+  cursor: zoom-in; /* Muestra el cursor de lupa/zoom */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto Hover: eleva la tarjeta y aplica zoom a la imagen dentro */
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(37, 48, 25, 0.16);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.48 / 1;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06); /* Zoom interior suave */
+  filter: brightness(1.02);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 
     .project-tags {
       display: flex;
