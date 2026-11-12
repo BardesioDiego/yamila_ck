@@ -844,6 +844,48 @@
       }
     }
 
+    /* Ocultamos la imagen móvil por defecto en computadoras */
+.hero-mobile-image {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  /* En celulares, desactivamos la foto de fondo del hero */
+  .site-hero {
+    min-height: auto;
+    background-image: none !important;
+    background-color: var(--cream);
+    padding-bottom: 30px;
+  }
+
+  .hero-copy .hero-eyebrow {
+    color: var(--olive-soft);
+  }
+
+  .hero-copy h1 {
+    color: var(--olive);
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .hero-copy p {
+    color: var(--ink);
+    opacity: 0.9;
+  }
+
+  /* Hacemos visible la foto optimizada SOLO en celulares */
+  .hero-mobile-image {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 24px auto 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(41, 59, 28, 0.15);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+}
+
     @media (max-width: 767.98px) {
       .site-hero {
         min-height: 480px;
