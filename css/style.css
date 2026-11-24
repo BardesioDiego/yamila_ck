@@ -1,4 +1,12 @@
 
+    @font-face {
+      font-family: "Awesome Lathusca";
+      src: url("fonts/Awesome Lathusca.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
     :root {
       --cream: #e9e9c3;
       --cream-light: #f3f0d7;
@@ -179,11 +187,11 @@
       max-width: 700px;
       margin-bottom: 12px;
       color: #ffeda8;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      font-family: "Awesome Lathusca", Georgia, serif;
+      font-size: clamp(2.5rem, 3.7vw, 3.55rem);
       font-weight: 400;
-      letter-spacing: -.045em;
-      line-height: .98;
+      letter-spacing: -.035em;
+      line-height: 1;
       text-transform: uppercase;
     }
 
@@ -571,6 +579,43 @@
   filter: brightness(1.02);
 }
 
+/* Mantener el aspecto original de los tags siendo ahora botones */
+.project-tags .tag-btn {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor; /* Ajusta si tus span ya tenían bordes o fondo */
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Estilo del botón seleccionado */
+.project-tags .tag-btn.active {
+  background-color: #111; /* Cambia por el color principal de la marca */
+  color: #fff;
+  border-color: #111;
+}
+
+/* Ocultar elementos de otras categorías */
+.gallery-item.is-hidden {
+  display: none;
+}
+
+/* Pequeña transición suave al aparecer */
+.gallery-item:not(.is-hidden) {
+  animation: fadeGallery 0.35s ease;
+}
+
+@keyframes fadeGallery {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Responsivo */
 @media (max-width: 900px) {
   .gallery-grid {
