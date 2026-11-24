@@ -10,7 +10,7 @@
     :root {
       --cream: #e9e9c3;
       --cream-light: #f3f0d7;
-      --olive: #293b1c;
+      --olive: #3d5033;
       --olive-soft: #445438;
       --orange: #bf581f;
       --orange-dark: #a94716;
@@ -590,10 +590,54 @@
 }
 
 /* Estilo del botón seleccionado */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* o flex-start según tu alineación */
+  gap: 0.65rem;
+}
+
+.project-tags .tag-btn {
+  appearance: none;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.35rem;
+  border-radius: 999px; /* Estilo píldora como tus botones actuales */
+  border: 1px solid rgba(61, 80, 51, 0.25);
+  background-color: rgba(255, 255, 255, 0.55);
+  color: #2f2a24;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-tags .tag-btn:hover {
+  border-color: #c45d28;
+  color: #c45d28;
+  background-color: rgba(196, 93, 40, 0.08);
+  transform: translateY(-1px);
+}
+
+
 .project-tags .tag-btn.active {
-  background-color: #111; /* Cambia por el color principal de la marca */
-  color: #fff;
-  border-color: #111;
+  background-color: #3d5033;
+  border-color: #3d5033;
+  color: #f6e99b;
+  box-shadow: 0 6px 16px rgba(61, 80, 51, 0.22);
+}
+*/
+
+.project-tags .tag-btn:focus-visible {
+  outline: 2px solid #c45d28;
+  outline-offset: 2px;
 }
 
 /* Ocultar elementos de otras categorías */
@@ -604,6 +648,43 @@
 /* Pequeña transición suave al aparecer */
 .gallery-item:not(.is-hidden) {
   animation: fadeGallery 0.35s ease;
+}
+
+/* Asegura que .gallery-item sirva de referencia para el ícono */
+.gallery-item {
+  position: relative;
+}
+
+/* Badge de play en las tarjetas de video */
+.video-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  pointer-events: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.gallery-item:hover .video-badge {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Video dentro del lightbox */
+.lightbox-video {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 6px;
+  background: #000;
 }
 
 @keyframes fadeGallery {
