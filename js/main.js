@@ -28,8 +28,39 @@ function initGalleryFilters() {
 
   if (!filterButtons.length || !galleryItems.length) return;
 
+  let selectionRequest = 0;
+
+  const preloadCategoryImages = async (category) => {
+    const images = Array.from(galleryItems)
+      .filter((item) => item.dataset.category === category)
+      .map((item) => item.querySelector('img'))
+      .filter(Boolean);
+
+    await Promise.all(images.map(async (img) => {
+      img.loading = 'eager';
+
+      try {
+        await img.decode();
+      } catch (error) {
+        console.error(`No se pudo cargar una imagen de la categoría "${category}".`, error);
+      }
+    }));
+  };
+
   filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
+    const selectedCategory = button.getAttribute('data-filter');
+    const preloadImages = () => {
+      void preloadCategoryImages(selectedCategory);
+    };
+
+    button.addEventListener('mouseover', preloadImages);
+    button.addEventListener('focus', preloadImages);
+
+    button.addEventListener('click', async () => {
+      const request = ++selectionRequest;
+      await preloadCategoryImages(selectedCategory);
+      if (request !== selectionRequest) return;
+
       // Actualizar botón activo y accesibilidad
       filterButtons.forEach((btn) => {
         btn.classList.remove('active');
@@ -40,8 +71,6 @@ function initGalleryFilters() {
       button.setAttribute('aria-selected', 'true');
 
       // Filtrar elementos de la galería
-      const selectedCategory = button.getAttribute('data-filter');
-
       galleryItems.forEach((item) => {
         const matches = item.getAttribute('data-category') === selectedCategory;
         item.classList.toggle('is-hidden', !matches);
