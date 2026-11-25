@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initGalleryFilters();
-  initGalleryLightbox();
   initSmoothScroll();
 });
 
@@ -85,58 +84,7 @@ function initGalleryFilters() {
 }
 
 /**
- * 3. Visor de imágenes (Lightbox) para las fotos de la galería
- */
-function initGalleryLightbox() {
-  const galleryLinks = document.querySelectorAll('.gallery-grid .gallery-item');
-  if (!galleryLinks.length) return;
-
-  // Crear el modal dinámicamente una sola vez
-  const lightbox = document.createElement('div');
-  lightbox.className = 'lightbox';
-  lightbox.setAttribute('role', 'dialog');
-  lightbox.setAttribute('aria-modal', 'true');
-  lightbox.setAttribute('aria-label', 'Vista ampliada de imagen');
-  lightbox.innerHTML = `
-    <button type="button" class="lightbox-close" aria-label="Cerrar imagen">&times;</button>
-    <img class="lightbox-img" src="" alt="">
-  `;
-  document.body.appendChild(lightbox);
-
-  const lightboxImg = lightbox.querySelector('.lightbox-img');
-  const closeBtn = lightbox.querySelector('.lightbox-close');
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('is-open');
-    document.body.style.overflow = '';
-  };
-
-  galleryLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const imgInside = link.querySelector('img');
-      lightboxImg.src = link.getAttribute('href');
-      lightboxImg.alt = imgInside ? imgInside.alt : 'Imagen de proyecto';
-      lightbox.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
-      closeLightbox();
-    }
-  });
-}
-
-/**
- * 4. Desplazamiento suave para enlaces internos (#inicio, etc.)
+ * 3. Desplazamiento suave para enlaces internos (#inicio, etc.)
  */
 function initSmoothScroll() {
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
