@@ -1257,6 +1257,10 @@
         gap: 13px;
       }
 
+      .process-step {
+        text-align: center;
+      }
+
       .process-step h3 {
         font-size: .9rem;
       }
